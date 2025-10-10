@@ -1,0 +1,25 @@
+{
+  "name": "gamehub-news-aggregator",
+  "version": "1.0.0",
+  "description": "News aggregator for GameHub - fetches from RSS and GitHub",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "rss",
+    "news",
+    "gamehub"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "linkedom": "^0.18.12",
+    "marked": "^16.4.0"
+  }
+}

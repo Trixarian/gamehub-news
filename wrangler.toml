@@ -1,0 +1,11 @@
+name = "gamehub-news-aggregator"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "NEWS_CACHE"
+id = "a95bc6bb522f4a6380b9605409902346"
+
+# Cron trigger - refresh news every 30 minutes
+[triggers]
+crons = ["*/30 * * * *"]
