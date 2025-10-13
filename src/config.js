@@ -19,7 +19,7 @@ export const NEWS_SOURCES = {
     },
     {
       id: 'ryanretro',
-      channelId: 'UCIEHVUTGbuXzW0WNbxboYag',  // Ryan Retro
+      channelId: 'UCh9GxjM-FNuSWv7xqn3UKVw',  // Ryan Retro
       title: 'Retro Gaming',
       subtitle: 'Ryan Retro'
     }

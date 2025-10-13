@@ -47,6 +47,9 @@ function parseYouTubeRSS(xmlText) {
     // Video URL
     const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
+    // Format the description with proper line breaks and clickable links
+    const formattedDescription = formatYouTubeDescription(description || '');
+
     items.push({
       title: title,
       link: videoUrl,
@@ -62,7 +65,7 @@ function parseYouTubeRSS(xmlText) {
           sandbox="allow-scripts allow-same-origin allow-presentation"
         ></iframe>
       </div>
-      <p style="color: #e0e0e0; line-height: 1.6; padding: 0 20px;">${description || ''}</p>`,
+      <div style="color: #e0e0e0; line-height: 1.8; padding: 0 20px; white-space: pre-wrap;">${formattedDescription}</div>`,
       pubDate: published,
       imageUrl: thumbnailUrl,
       timestamp: new Date(published).getTime(),
@@ -73,6 +76,39 @@ function parseYouTubeRSS(xmlText) {
   }
 
   return items.slice(0, 3); // Limit to 3 most recent videos per channel
+}
+
+function formatYouTubeDescription(text) {
+  if (!text) return '';
+
+  // Escape HTML first to prevent XSS
+  let formatted = text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+  // Convert URLs to clickable links
+  // Match http(s):// URLs
+  formatted = formatted.replace(
+    /(https?:\/\/[^\s<]+[^\s<.,;:!?'")\]}])/gi,
+    '<a href="$1" target="_blank" style="color: #64a4ff; text-decoration: none;">$1</a>'
+  );
+
+  // Match www. URLs (without protocol)
+  formatted = formatted.replace(
+    /(?<!https?:\/\/)(?<!@)(www\.[^\s<]+[^\s<.,;:!?'")\]}])/gi,
+    '<a href="https://$1" target="_blank" style="color: #64a4ff; text-decoration: none;">$1</a>'
+  );
+
+  // Convert timestamps (e.g., "00:00" or "1:23:45") to styled text
+  formatted = formatted.replace(
+    /(\d{1,2}:\d{2}(?::\d{2})?)/g,
+    '<span style="color: #64a4ff; font-weight: 500;">$1</span>'
+  );
+
+  return formatted;
 }
 
 function extractTag(content, tagName) {
