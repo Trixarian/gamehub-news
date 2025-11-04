@@ -23,7 +23,7 @@ export function transformToGameHubList(allNewsItems, page = 1, pageSize = 4) {
     msg: 'Success',
     time: '',
     data: {
-      title: 'Game News',
+      title: 'Gaming / Emulation News',
       aspect_ratio: '0.56',
       fixed_card_size: 2,
       is_play_video: 2,
@@ -37,8 +37,8 @@ export function transformToGameHubList(allNewsItems, page = 1, pageSize = 4) {
         sys_language_id: 1,
         platform: 1,
         card_type: 2,
-        jump_type: 7,
-        card_param: String(item.id),
+        jump_type: 7,  // 7 = detail view (for all items)
+        card_param: String(item.id),  // ID for all items
         title: truncateText(item.title, 80),
         subtitle: item.subtitle,
         content_img: item.imageUrl || DEFAULT_COVER_IMAGE,

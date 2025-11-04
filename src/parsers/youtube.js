@@ -54,16 +54,16 @@ function parseYouTubeRSS(xmlText) {
       title: title,
       link: videoUrl,
       description: description || `Watch ${title} on YouTube`,
-      content: `<div class="video-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          sandbox="allow-scripts allow-same-origin allow-presentation"
-        ></iframe>
+      content: `<div style="text-align: center; margin: 20px 0;">
+        <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" style="text-decoration: none; color: inherit;">
+          <img src="${thumbnailUrl}" alt="${title}" style="width: 100%; max-width: 100%; height: auto; display: block; border-radius: 8px; margin-bottom: 16px;">
+          <div style="display: inline-flex; align-items: center; background-color: #FF0000; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 16px; margin-bottom: 20px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white" style="margin-right: 8px;">
+              <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+            </svg>
+            Watch on YouTube
+          </div>
+        </a>
       </div>
       <div style="color: #e0e0e0; line-height: 1.8; padding: 0 20px; white-space: pre-wrap;">${formattedDescription}</div>`,
       pubDate: published,

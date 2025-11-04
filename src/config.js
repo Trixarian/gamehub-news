@@ -7,6 +7,30 @@ export const NEWS_SOURCES = {
       url: 'https://www.rockpapershotgun.com/feed/news',
       title: 'Gaming News',
       subtitle: 'Rock Paper Shotgun'
+    },
+    {
+      id: 'retrogamecorps',
+      url: 'https://retrogamecorps.com/feed/',
+      title: 'Retro Gaming & Emulation',
+      subtitle: 'Retro Game Corps'
+    },
+    {
+      id: 'pcgamer',
+      url: 'https://www.pcgamer.com/rss/',
+      title: 'PC Gaming News',
+      subtitle: 'PC Gamer'
+    },
+    {
+      id: 'polygon',
+      url: 'https://www.polygon.com/rss/index.xml',
+      title: 'Gaming & Entertainment',
+      subtitle: 'Polygon'
+    },
+    {
+      id: 'eurogamer',
+      url: 'https://www.eurogamer.net/?format=rss',
+      title: 'Gaming News & Reviews',
+      subtitle: 'Eurogamer'
     }
   ],
   youtube: [
@@ -22,10 +46,22 @@ export const NEWS_SOURCES = {
       channelId: 'UCh9GxjM-FNuSWv7xqn3UKVw',  // Ryan Retro
       title: 'Retro Gaming',
       subtitle: 'Ryan Retro'
+    },
+    {
+      id: 'mrsujano',
+      channelId: 'UCu-NRUdNtfcjdGA5Abt3JUw',
+      title: 'Emulation News',
+      subtitle: 'Mr. Sujano'
+    },
+    {
+      id: 'the412banner',
+      channelId: 'UCxWZ2GteikwcJZhefRtxaXg',
+      title: 'Handheld Gaming',
+      subtitle: 'The412Banner'
     }
   ],
   github: [
-    // Emulation & Translation Layers
+    // Emulation
     {
       id: 'fex-emu',
       owner: 'FEX-Emu',
@@ -33,90 +69,18 @@ export const NEWS_SOURCES = {
       subtitle: 'FEX-Emu'
     },
     {
-      id: 'box64',
-      owner: 'ptitSeb',
-      repo: 'box64',
-      subtitle: 'Box64'
-    },
-    {
-      id: 'box86',
-      owner: 'ptitSeb',
-      repo: 'box86',
-      subtitle: 'Box86'
+      id: 'emureadylite',
+      owner: 'Producdevity',
+      repo: 'EmuReadyLite',
+      subtitle: 'EmuReady Lite'
     },
 
-    // Windows on Android Emulators
-    {
-      id: 'winlator',
-      owner: 'brunodev85',
-      repo: 'winlator',
-      subtitle: 'Winlator'
-    },
-    {
-      id: 'mobox',
-      owner: 'olegos2',
-      repo: 'mobox',
-      subtitle: 'Mobox'
-    },
-
-    // Wine & Proton
-    {
-      id: 'wine-ge',
-      owner: 'GloriousEggroll',
-      repo: 'wine-ge-custom',
-      subtitle: 'Wine-GE'
-    },
-    {
-      id: 'proton-ge',
-      owner: 'GloriousEggroll',
-      repo: 'proton-ge-custom',
-      subtitle: 'Proton-GE'
-    },
-    {
-      id: 'proton',
-      owner: 'ValveSoftware',
-      repo: 'Proton',
-      subtitle: 'Valve Proton'
-    },
-
-    // DirectX Translation (DXVK & VKD3D)
-    {
-      id: 'dxvk',
-      owner: 'doitsujin',
-      repo: 'dxvk',
-      subtitle: 'DXVK'
-    },
-    {
-      id: 'vkd3d-proton',
-      owner: 'HansKristian-Work',
-      repo: 'vkd3d-proton',
-      subtitle: 'VKD3D-Proton'
-    },
-
-    // GPU Drivers (Turnip Mesa & Adreno)
-    {
-      id: 'mesa-turnip-builder',
-      owner: 'v3kt0r-87',
-      repo: 'Mesa-Turnip-Builder',
-      subtitle: 'Mesa Turnip Builder'
-    },
+    // GPU Drivers
     {
       id: 'adreno-tools-drivers',
       owner: 'K11MCH1',
       repo: 'AdrenoToolsDrivers',
       subtitle: 'Adreno Tools Drivers'
-    },
-    {
-      id: 'qualcomm-adreno-driver',
-      owner: 'zoerakk',
-      repo: 'qualcomm-adreno-driver',
-      subtitle: 'Qualcomm Adreno (8 Elite)'
-    },
-    {
-      id: 'freedreno-turnip-ci',
-      owner: 'Weab-chan',
-      repo: 'freedreno_turnip-CI',
-      subtitle: 'Freedreno Turnip CI'
     }
   ]
 };
